@@ -6,7 +6,7 @@ This is a repository containing the exercises developed in the TDD (Test Driven 
 
 <div align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/joaomacedx/TDD-ITA-Course?style=flat" >
-  <img alt="Made by João Macêdo" src="https://img.shields.io/badge/made%20by-João%20Macêdo-orange">
+  <img alt="Made by João Macêdo" src="https://img.shields.io/badge/made%20by-João%20Macêdo-yellow">
  </div>
 
 ## 🛠 Technologies 🛠
