@@ -5,7 +5,7 @@
 This is a repository containing the exercises developed in the TDD (Test Driven Development) course at the <a href="http://www.ita.br/">Aeronautics Institute of Technology</a>
 
 <div align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/joaomacedx/TDD-ITA-Course?style=flat?color=yellow" >
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/joaomacedx/TDD-ITA-Course?style=flat-yellow" >
   <img alt="Made by João Macêdo" src="https://img.shields.io/badge/made%20by-João%20Macêdo-yellow">
  </div>
 
