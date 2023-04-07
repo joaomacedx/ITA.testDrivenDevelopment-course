@@ -45,11 +45,15 @@ public class StackTest {
     public void removeFromEmptyStack() {
         stack.pop();
     }
-    @Test(expected = StackFullException.class) 
+    @Test
     public void pushInFullStack() {
         for(int iterator = 0; iterator < 10; iterator++) {
             stack.push("element" + iterator);
         }
-        stack.push("error");
+        try {
+            stack.push("error");
+            fail();
+        } catch (StackFullException ex) {}
+
     }
 }
