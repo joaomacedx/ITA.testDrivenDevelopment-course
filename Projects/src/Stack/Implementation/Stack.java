@@ -3,7 +3,7 @@ package Stack.Implementation;
 
 public class Stack{
 
-    public Stack(int i) {
+    public Stack() {
     }
 
     public boolean isEmpty() {
@@ -12,6 +12,13 @@ public class Stack{
 
     public int length() {
         return 0;
+    }
+
+    public void push(String string) {
+    }
+
+    public Object firstElement() {
+        return null;
     }
     
 }
