@@ -2,23 +2,28 @@ package Stack.Implementation;
 
 
 public class Stack{
+    private Object element;
+    private  int length;
 
     public Stack() {
     }
 
     public boolean isEmpty() {
-        return true;
+        if(element == null) return true;
+        else return false;
     }
 
     public int length() {
-        return 0;
+        return this.length;
     }
 
-    public void push(String string) {
+    public void push(Object value) {
+        this.element = value;
+        this.length++; 
     }
 
     public Object firstElement() {
-        return null;
+        return this.element;
     }
     
 }
