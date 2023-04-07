@@ -21,4 +21,17 @@ public class StackTest {
         assertEquals(1, stack.length());
         assertEquals("first", stack.firstElement());
     }
+    @Test
+    public void pushAndPop() {
+        Stack stack = new Stack();
+        stack.push("first");
+        stack.push("second");
+        assertFalse(stack.isEmpty());
+        assertEquals(2, stack.length());
+        assertEquals("second", stack.firstElement());
+        Object popElement = stack.pop();
+        assertEquals(1, stack.length());
+        assertEquals("first", stack.firstElement());
+        assertEquals("second", popElement);
+    }
 }

@@ -1,15 +1,14 @@
 package Stack.Implementation;
+public class Stack {
 
-
-public class Stack{
-    private Object element;
+    private Object[] elements = new Object[10];
     private  int length;
 
     public Stack() {
     }
 
     public boolean isEmpty() {
-        if(element == null) return true;
+        if(length == 0) return true;
         else return false;
     }
 
@@ -18,12 +17,18 @@ public class Stack{
     }
 
     public void push(Object value) {
-        this.element = value;
+        this.elements[length] = value;
         this.length++; 
     }
 
     public Object firstElement() {
-        return this.element;
+        return this.elements[length - 1];
+    }
+
+    public Object pop() {
+        Object firstElement = this.firstElement();
+        length--;
+        return firstElement;
     }
     
 }
