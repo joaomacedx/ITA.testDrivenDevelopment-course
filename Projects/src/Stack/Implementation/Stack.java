@@ -30,9 +30,7 @@ public class Stack {
     }
 
     public Object pop() {
-        if(this.isEmpty()) {
-            throw new StackEmptyException("Unable to pop because there are no elements on the stack");
-        }
+        if(this.isEmpty()) throw new StackEmptyException("Unable to pop because there are no elements on the stack");
         Object firstElement = this.firstElement();
         length--;
         return firstElement;
