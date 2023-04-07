@@ -7,11 +7,11 @@ public class Stack{
     }
 
     public boolean isEmpty() {
-        return false;
+        return true;
     }
 
-    public Object length() {
-        return null;
+    public int length() {
+        return 0;
     }
     
 }
