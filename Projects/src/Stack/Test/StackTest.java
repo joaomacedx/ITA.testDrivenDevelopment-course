@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 
 import Stack.Exception.StackEmptyException;
+import Stack.Exception.StackFullException;
 import Stack.Implementation.Stack;
 
 import org.junit.Test;
@@ -43,5 +44,12 @@ public class StackTest {
     @Test(expected = StackEmptyException.class) 
     public void removeFromEmptyStack() {
         stack.pop();
+    }
+    @Test(expected = StackFullException.class) 
+    public void pushInFullStack() {
+        for(int iterator = 0; iterator < 10; iterator++) {
+            stack.push("element" + iterator);
+        }
+        stack.push("error");
     }
 }

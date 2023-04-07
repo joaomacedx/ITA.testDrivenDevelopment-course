@@ -1,6 +1,7 @@
 package Stack.Implementation;
 
 import Stack.Exception.StackEmptyException;
+import Stack.Exception.StackFullException;
 
 public class Stack {
 
@@ -21,6 +22,7 @@ public class Stack {
     }
 
     public void push(Object value) {
+        if(length == elements.length) throw new StackFullException("Cannot stack more elements as the stack is full");
         this.elements[length] = value;
         this.length++; 
     }
