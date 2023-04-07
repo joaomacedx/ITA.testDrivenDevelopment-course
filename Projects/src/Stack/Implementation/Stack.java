@@ -1,10 +1,14 @@
 package Stack.Implementation;
+
+import java.rmi.server.ObjID;
+
 public class Stack {
 
-    private Object[] elements = new Object[10];
+    private Object[] elements;
     private  int length;
 
-    public Stack() {
+    public Stack(int lengthValue) {
+        this.elements = new Object[lengthValue];
     }
 
     public boolean isEmpty() {
