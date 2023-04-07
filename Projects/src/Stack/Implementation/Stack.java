@@ -1,5 +1,6 @@
 package Stack.Implementation;
 
+import Stack.Exception.StackEmptyException;
 
 public class Stack {
 
@@ -29,6 +30,9 @@ public class Stack {
     }
 
     public Object pop() {
+        if(this.isEmpty()) {
+            throw new StackEmptyException("Unable to pop because there are no elements on the stack");
+        }
         Object firstElement = this.firstElement();
         length--;
         return firstElement;

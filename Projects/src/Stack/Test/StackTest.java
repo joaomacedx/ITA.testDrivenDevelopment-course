@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 
+import Stack.Exception.StackEmptyException;
 import Stack.Implementation.Stack;
 
 import org.junit.Test;
@@ -38,5 +39,9 @@ public class StackTest {
         assertEquals(1, stack.length());
         assertEquals("first", stack.firstElement());
         assertEquals("second", popElement);
+    }
+    @Test(expected = StackEmptyException.class) 
+    public void removeFromEmptyStack() {
+        stack.pop();
     }
 }
