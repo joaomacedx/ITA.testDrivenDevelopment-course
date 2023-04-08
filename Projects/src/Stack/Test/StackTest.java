@@ -54,6 +54,5 @@ public class StackTest {
             stack.push("error");
             fail();
         } catch (StackFullException ex) {}
-
     }
 }
