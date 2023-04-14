@@ -3,7 +3,6 @@ package CamelCase.Implementation;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.experimental.theories.Theories;
 
 import CamelCase.Exception.*;
 
@@ -28,7 +27,7 @@ public class CamelCase {
        return false;
     }
     private static boolean initWithEspecialCharacteres(String value) {
-        if(value.substring(0).matches("[çÇ$&+,:;=?@#|'<>.^*()%!-]")) return true;
+        if(value.substring(0).matches("[çÇ$&+,:;=?@#|'<>.^*()%!-].*")) return true;
         return false;
     }
 }
