@@ -29,5 +29,9 @@ public class CamelCaseTest {
     public void checkInitWithNumber() { 
         List<String> list = CamelCase.toTransform("10Primeiros");
     }
+    @Test
+    public void checkInitWithEspecialCharacteres() {
+        List<String> list = CamelCase.toTransform("#nome");
+    }
 
 }
