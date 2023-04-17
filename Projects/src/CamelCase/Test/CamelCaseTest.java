@@ -41,5 +41,13 @@ public class CamelCaseTest {
         List<String> receivedList = CamelCase.toTransform("nome");
         assertEquals(expectedList.size(), receivedList.size());
     }
+    @Test 
+    public void checkConvertCompoundString() {
+        List<String> expectedList = new ArrayList<String>();
+        expectedList.add("nome");
+        expectedList.add("Composto");
+        List<String> receivedList = CamelCase.toTransform("nomeComposto");
+        assertEquals(expectedList, receivedList);
+    }
 
 }
