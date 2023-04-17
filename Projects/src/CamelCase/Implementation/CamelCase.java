@@ -14,7 +14,7 @@ public class CamelCase {
         List<String> list = new ArrayList<String>();
         if(isEmpty(value)) throw new EmptyStringCamelCaseException("This string is null or empty");
         if(initWithNumber(value)) throw new InitWithNumberCamelCaseExeception("String cannot start with numbers");
-        if(initWithEspecialCharacteres(value)) throw new InitWithEspecialCharCamelCaseException("String cannot start with especial characteres");
+        if(hasEspecialCharacteres(value)) throw new HasEspecialCharCamelCaseException("String cannot start with especial characteres");
         list.add(value);
         return list;
     }
@@ -26,7 +26,7 @@ public class CamelCase {
        if(value.substring(0).matches("[0-9].*")) return true;
        return false;
     }
-    private static boolean initWithEspecialCharacteres(String value) {
+    private static boolean hasEspecialCharacteres(String value) {
         if(value.substring(0).matches("[çÇ$&+,:;=?@#|'<>.^*()%!-].*")) return true;
         return false;
     }

@@ -29,9 +29,17 @@ public class CamelCaseTest {
     public void checkInitWithNumber() { 
         List<String> list = CamelCase.toTransform("10Primeiros");
     }
-    @Test(expected = InitWithEspecialCharCamelCaseException.class)
+    @Test(expected = HasEspecialCharCamelCaseException.class)
     public void checkInitWithEspecialCharacteres() {
         List<String> list = CamelCase.toTransform("#nome");
+    }
+    @Test 
+    public void checkIndexOfString() {
+        List<String> expectedList = new ArrayList<String>();
+        expectedList.add("nome");
+        expectedList.size();
+        List<String> receivedList = CamelCase.toTransform("nome");
+        assertEquals(expectedList.size(), receivedList.size());
     }
 
 }
