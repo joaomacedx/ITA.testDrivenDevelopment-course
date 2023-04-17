@@ -9,8 +9,6 @@ import CamelCase.Exception.*;
 
 
 public class CamelCase {
-   public CamelCase() {}
-
     public static List<String> toTransform(String value) {
         List<String> list = new ArrayList<String>();
         validations(value);
