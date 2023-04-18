@@ -18,7 +18,7 @@ public class CamelCase {
 
     private static void validations(String value) {
         if(isEmpty(value)) throw new EmptyStringCamelCaseException("This string is null or empty");
-        if(initWithNumber(value)) throw new InitWithNumberCamelCaseExeception("String cannot start with numbers");
+        if(initWithNumber(value)) throw new InitWithNumberCamelCaseException("String cannot start with numbers");
         if(hasEspecialCharacteres(value)) throw new HasEspecialCharCamelCaseException("String cannot start with especial characteres");
     }
 
