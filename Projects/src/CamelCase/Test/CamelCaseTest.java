@@ -25,7 +25,7 @@ public class CamelCaseTest {
      List<String> receivedList = CamelCase.toTransform(" ");
      assertEquals(expectedList, receivedList);
     }
-    @Test(expected = InitWithNumberCamelCaseExeception.class)
+    @Test(expected = InitWithNumberCamelCaseException.class)
     public void checkInitWithNumber() { 
         List<String> list = CamelCase.toTransform("10Primeiros");
     }
