@@ -10,7 +10,6 @@ import CamelCase.Exception.*;
 
 public class CamelCase {
     public static List<String> toTransform(String value) {
-        List<String> list = new ArrayList<String>();
         validations(value);
         List<String> result = Arrays.asList(value.split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z]|([0-9][0-9]))"));
         return result;
