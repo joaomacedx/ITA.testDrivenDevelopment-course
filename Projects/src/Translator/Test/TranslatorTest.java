@@ -13,5 +13,12 @@ public class TranslatorTest {
         Translator translator = new Translator();
         assertTrue(translator.isEmpty());
     }
+    @Test
+    public void checkTranslation() {
+        Translator translator = new Translator();
+        translator.addWord("bom", "good");
+        assertFalse(translator.isEmpty());
+        assertEquals("good", translator.translate("bom"));
+    }
 
 }
