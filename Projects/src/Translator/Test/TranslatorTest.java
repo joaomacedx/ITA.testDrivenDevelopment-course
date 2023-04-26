@@ -38,5 +38,12 @@ public class TranslatorTest {
         this.translator.addWordTranslation("bom", "nice");
         assertEquals("good, nice", this.translator.translate("bom"));
     }
+    @Test
+    public void checkTranslateSentence() {
+        this.translator.addWordTranslation("guerra", "war");
+        this.translator.addWordTranslation("é", "is");
+        this.translator.addWordTranslation("ruim", "bad");
+        assertEquals("war is bad", this.translator.translateSentence("guerra é ruim"));
+    }
 
 }

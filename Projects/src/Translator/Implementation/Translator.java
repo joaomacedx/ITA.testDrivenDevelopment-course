@@ -21,4 +21,14 @@ public class Translator {
         return this.translations.get(word);
     }
 
+    public String translateSentence(String sentence) {
+        String[] words = sentence.split(" ");
+        String translatedSentence = "";
+        for(int iterator = 0; iterator < words.length; iterator++) {
+            String translation = translate(words[iterator]);
+            translatedSentence += " " + translation;
+        }
+        return translatedSentence.trim();
+    }
+
 }
