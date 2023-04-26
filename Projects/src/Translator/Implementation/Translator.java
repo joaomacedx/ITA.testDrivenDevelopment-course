@@ -3,15 +3,19 @@ package Translator.Implementation;
 
 public class Translator {
 
+    private String translation;
+
     public boolean isEmpty() {
-        return true;
+        if(this.translation == null) return true;
+        return false;
     }
 
-    public void addWord(String string, String string2) {
+    public void addWord(String word, String translation) {
+        this.translation = translation;
     }
 
-    public Object translate(String string) {
-        return null;
+    public String translate(String word) {
+        return this.translation;
     }
 
 }
