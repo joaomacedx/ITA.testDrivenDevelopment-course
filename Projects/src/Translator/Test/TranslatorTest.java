@@ -16,7 +16,7 @@ public class TranslatorTest {
     @Test
     public void checkTranslation() {
         Translator translator = new Translator();
-        translator.addWord("bom", "good");
+        translator.addWordTranslation("bom", "good");
         assertFalse(translator.isEmpty());
         assertEquals("good", translator.translate("bom"));
     }

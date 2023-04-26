@@ -10,7 +10,7 @@ public class Translator {
         return false;
     }
 
-    public void addWord(String word, String translation) {
+    public void addWordTranslation(String word, String translation) {
         this.translation = translation;
     }
 
