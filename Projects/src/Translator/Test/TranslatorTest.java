@@ -32,5 +32,11 @@ public class TranslatorTest {
         assertEquals("good", this.translator.translate("bom"));
         assertEquals("bad", this.translator.translate("mau"));
     }
+    @Test
+    public void checkTwoTranslationsForTheSameWord() {
+        this.translator.addWordTranslation("bom", "good");
+        this.translator.addWordTranslation("bom", "nice");
+        assertEquals("good, nice", this.translator.translate("bom"));
+    }
 
 }
