@@ -13,6 +13,7 @@ public class Translator {
     }
 
     public void addWordTranslation(String word, String translation) {
+        if(this.translations.containsKey(word)) translation = translate(word) + ", " + translation;
         this.translations.put(word, translation);
     }
 
