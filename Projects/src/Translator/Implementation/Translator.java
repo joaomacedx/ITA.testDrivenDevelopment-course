@@ -26,6 +26,7 @@ public class Translator {
         String translatedSentence = "";
         for(int iterator = 0; iterator < words.length; iterator++) {
             String translation = translate(words[iterator]);
+            if(translation.contains(",")) translation = translation.substring(0, translation.indexOf(","));
             translatedSentence += " " + translation;
         }
         return translatedSentence.trim();
