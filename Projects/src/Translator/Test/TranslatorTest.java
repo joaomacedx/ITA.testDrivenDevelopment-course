@@ -45,5 +45,13 @@ public class TranslatorTest {
         this.translator.addWordTranslation("ruim", "bad");
         assertEquals("war is bad", this.translator.translateSentence("guerra é ruim"));
     }
+    @Test
+    public void checkTranslateSentenceWithTwoTranslationsForTheSameWord() {
+        this.translator.addWordTranslation("paz", "peace");
+        this.translator.addWordTranslation("é", "is");
+        this.translator.addWordTranslation("bom", "good");
+        this.translator.addWordTranslation("bom", "nice");
+        assertEquals("peace is good", this.translator.translateSentence("paz é bom"));
+    }
 
 }
