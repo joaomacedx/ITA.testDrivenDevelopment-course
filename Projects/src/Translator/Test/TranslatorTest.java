@@ -1,32 +1,36 @@
 package Translator.Test;
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import Translator.Implementation.Translator;
 
 
 public class TranslatorTest { 
+    private Translator translator;
+
+    @Before
+    public void initTranslator() {
+        this.translator = new Translator();
+    }
 
     @Test
     public void checkTranslatorWithoutWords() {
-        Translator translator = new Translator();
-        assertTrue(translator.isEmpty());
+        assertTrue(this.translator.isEmpty());
     }
     @Test
     public void checkTranslation() {
-        Translator translator = new Translator();
-        translator.addWordTranslation("bom", "good");
-        assertFalse(translator.isEmpty());
-        assertEquals("good", translator.translate("bom"));
+        this.translator.addWordTranslation("bom", "good");
+        assertFalse(this.translator.isEmpty());
+        assertEquals("good", this.translator.translate("bom"));
     }
     @Test
     public void checkTwoTranslations() {
-        Translator translator = new Translator();
-        translator.addWordTranslation("bom", "good");
-        translator.addWordTranslation("mau", "bad");
-        assertEquals("good", translator.translate("bom"));
-        assertEquals("bad", translator.translate("mau"));
+        this.translator.addWordTranslation("bom", "good");
+        this.translator.addWordTranslation("mau", "bad");
+        assertEquals("good", this.translator.translate("bom"));
+        assertEquals("bad", this.translator.translate("mau"));
     }
 
 }
