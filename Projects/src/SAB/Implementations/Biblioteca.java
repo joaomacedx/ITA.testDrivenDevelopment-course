@@ -19,7 +19,7 @@ public class Biblioteca {
 			_repositorioLivros.add(livro);
 		} else
 			throw new AdicionarLivroInexistenteException(
-					"--->N�o pode adicionar livro inexistente!");
+					"--->Nao pode adicionar livro inexistente!");
 	}
 
 	public void registraUsuario(String nome)
