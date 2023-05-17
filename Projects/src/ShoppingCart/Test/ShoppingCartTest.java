@@ -48,4 +48,24 @@ public class ShoppingCartTest {
         //Assert
         assertEquals(true, productIsAddedCorrectly);
     }
+    @Test
+    public void checkAddTwoObservers_suceedes_WHEN_valid_products_are_registered_THEN_two_observers_must_listen_product_was_added_correctly() {
+         //Arrange
+         List<Product> listProducts = new ArrayList<Product>();
+         Product productToAdd= new Product("tennis", 100);
+         ShoppingCart cart = new ShoppingCart(listProducts);
+         MockCartObserver mockOne = new MockCartObserver();
+         MockCartObserver mockTwo = new MockCartObserver();
+         cart.addObserver(mockOne);
+         cart.addObserver(mockTwo);
+         cart.addProduct(productToAdd);
+ 
+         //Act
+         Boolean productIsAddedCorrectlyMockOneVerification = mockOne.checkProductAddition("tennis", 100);
+         Boolean productIsAddedCorrectlyMockTwoVerification = mockTwo.checkProductAddition("tennis", 100);
+
+         //Assert
+         assertEquals(true, productIsAddedCorrectlyMockOneVerification);
+         assertEquals(true, productIsAddedCorrectlyMockTwoVerification);
+    }
 }
