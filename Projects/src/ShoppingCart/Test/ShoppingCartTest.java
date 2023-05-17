@@ -33,7 +33,7 @@ public class ShoppingCartTest {
         assertEquals(expectedTotalValue, actualTotalValue);
     }
     @Test
-    public void checkListenProductAddition() {
+    public void checkListenProductAddition_suceedes_WHEN_valid_products_are_registered_THEN_the_products_are_registered() {
         //Arrange
         List<Product> listProducts = new ArrayList<Product>();
         Product productToAdd= new Product("tennis", 100);
@@ -41,8 +41,10 @@ public class ShoppingCartTest {
         MockCartObserver mock = new MockCartObserver();
         cart.addObserver(mock);
         cart.addProduct(productToAdd);
+
         //Act
         Boolean productIsAddedCorrectly = mock.checkProductAddition("tennis", 100);
+
         //Assert
         assertEquals(true, productIsAddedCorrectly);
     }
