@@ -9,7 +9,9 @@ import org.junit.Test;
 
 import ShoppingCart.Implementations.Product;
 import ShoppingCart.Implementations.ShoppingCart;
+import ShoppingCart.Interfaces.ICartObserver;
 import ShoppingCart.Mocks.MockCartObserver;
+import ShoppingCart.Mocks.MockCartObserverWithProblem;
 
 public class ShoppingCartTest {
 
@@ -75,8 +77,7 @@ public class ShoppingCartTest {
          Product productToAdd= new Product("tennis", 100);
          ShoppingCart cart = new ShoppingCart(listProducts);
          MockCartObserver mockOne = new MockCartObserver();
-         MockCartObserver mockTwo = new MockCartObserver();
-         mockTwo.throwException();
+         ICartObserver mockTwo = new MockCartObserverWithProblem();
          MockCartObserver mockThree = new MockCartObserver();
          cart.addObserver(mockOne);
          cart.addObserver(mockTwo);
@@ -85,12 +86,10 @@ public class ShoppingCartTest {
  
          //Act
          Boolean productIsAddedCorrectlyMockOneVerification = mockOne.checkProductAddition("tennis", 100);
-         Boolean productIsAddedCorrectlyMockTwoVerification = mockTwo.checkProductAddition("tennis", 100);
          Boolean productIsAddedCorrectlyMockThreeVerification = mockThree.checkProductAddition("tennis", 100);
 
          //Assert
          assertEquals(true, productIsAddedCorrectlyMockOneVerification);
-         assertEquals(false, productIsAddedCorrectlyMockTwoVerification);
          assertEquals(true, productIsAddedCorrectlyMockThreeVerification);
     }
 }
