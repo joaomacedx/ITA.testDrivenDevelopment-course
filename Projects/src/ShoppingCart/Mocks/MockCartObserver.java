@@ -1,7 +1,5 @@
 package ShoppingCart.Mocks;
 
-import static org.junit.Assert.assertEquals;
-
 import ShoppingCart.Interfaces.ICartObserver;
 
 public class MockCartObserver implements ICartObserver {
@@ -19,7 +17,7 @@ public class MockCartObserver implements ICartObserver {
     }
 
     public boolean checkProductAddition(String productNameToCheck, int productPriceToCheck) {
-        if(productNameToCheck.equals(productNameReceived) && productPriceToCheck == productPriceToCheck) 
+        if(productNameToCheck.equals(productNameReceived) && productPriceToCheck == productPriceReceived) 
             return true;
         return false;
     }
