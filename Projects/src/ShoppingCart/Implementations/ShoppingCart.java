@@ -14,8 +14,11 @@ public class ShoppingCart {
     }
     public void addProduct(Product productToAdd) {
         productsRepository.add(productToAdd);
-        for(ICartObserver observer: this.observersRepository) 
+        for(ICartObserver observer: this.observersRepository){
+            try{
             observer.productAdded(productToAdd.productName(), productToAdd.productPrice());
+            } catch (Exception ex) {}
+        }
     }
     public int totalValueOfProductsInTheCart() {
         int totalValue = 0;
