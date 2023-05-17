@@ -44,6 +44,6 @@ public class ShoppingCartTest {
         //Act
         Boolean productIsAddedCorrectly = mock.checkProductAddition("tennis", 100);
         //Assert
-        assertEquals(productIsAddedCorrectly, true);
+        assertEquals(true, productIsAddedCorrectly);
     }
 }
