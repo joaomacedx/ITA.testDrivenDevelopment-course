@@ -68,4 +68,29 @@ public class ShoppingCartTest {
          assertEquals(true, productIsAddedCorrectlyMockOneVerification);
          assertEquals(true, productIsAddedCorrectlyMockTwoVerification);
     }
+    @Test
+    public void checkObserverkeepsnotifying_WHEN_an_error_occurs_THEN_all_other_observers_must_continue_to_notify_product_was_added_correctly() {
+         //Arrange
+         List<Product> listProducts = new ArrayList<Product>();
+         Product productToAdd= new Product("tennis", 100);
+         ShoppingCart cart = new ShoppingCart(listProducts);
+         MockCartObserver mockOne = new MockCartObserver();
+         MockCartObserver mockTwo = new MockCartObserver();
+         mockTwo.throwException();
+         MockCartObserver mockThree = new MockCartObserver();
+         cart.addObserver(mockOne);
+         cart.addObserver(mockTwo);
+         cart.addObserver(mockThree);
+         cart.addProduct(productToAdd);
+ 
+         //Act
+         Boolean productIsAddedCorrectlyMockOneVerification = mockOne.checkProductAddition("tennis", 100);
+         Boolean productIsAddedCorrectlyMockTwoVerification = mockTwo.checkProductAddition("tennis", 100);
+         Boolean productIsAddedCorrectlyMockThreeVerification = mockThree.checkProductAddition("tennis", 100);
+
+         //Assert
+         assertEquals(true, productIsAddedCorrectlyMockOneVerification);
+         assertEquals(false, productIsAddedCorrectlyMockTwoVerification);
+         assertEquals(true, productIsAddedCorrectlyMockThreeVerification);
+    }
 }
