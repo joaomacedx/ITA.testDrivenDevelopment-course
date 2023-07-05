@@ -20,26 +20,27 @@ public class CaixaEletronicoTest {
     }
 
     @Test
-    public void logar_QUANDO_o_usuario_nao_informar_dados_validos_ENTAO_retornar_null() {
+    public void logar_QUANDO_o_usuario_nao_informar_dados_validos_ENTAO_retornar_mensagem_de_atencao() {
 
         //Arrange
-        String stringEsperada = null;
-        
+        String stringEsperada = "Nao foi possivel autenticar usuario";
         //Act
-        String stringAtual = caixaEletronico.logar();
+        String stringAtual = caixaEletronico.logar("");
 
         //Assert
         assertEquals(stringAtual, stringEsperada);
     }
 
     @Test
-    public void sacar_QUANDO_o_usuario_nao_informar_dados_validos_ENTAO_retornar_null() {
+    public void sacar_QUANDO_o_usuario_nao_possui_saldo_suficiente_ENTAO_retornar_mensagem_de_atencao() {
 
         //Arrange
-        String stringEsperada = null;
+        String stringEsperada = "Saldo insuficiente";
+        String numeroDaConta = "12345";
+        Double valor = 124.01;
         
         //Act
-        String stringAtual = caixaEletronico.logar();
+        String stringAtual = caixaEletronico.sacar(valor, numeroDaConta);
 
         //Assert
         assertEquals(stringAtual, stringEsperada);
@@ -50,9 +51,8 @@ public class CaixaEletronicoTest {
 
         //Arrange
         String stringEsperada = null;
-        
         //Act
-        String stringAtual = caixaEletronico.logar();
+        String stringAtual = caixaEletronico.depositar();
 
         //Assert
         assertEquals(stringAtual, stringEsperada);
@@ -64,7 +64,7 @@ public class CaixaEletronicoTest {
         String stringEsperada = null;
         
         //Act
-        String stringAtual = caixaEletronico.logar();
+        String stringAtual = caixaEletronico.saldo();
 
         //Assert
         assertEquals(stringAtual, stringEsperada);
