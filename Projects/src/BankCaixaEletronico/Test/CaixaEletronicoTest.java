@@ -2,21 +2,22 @@ package BankCaixaEletronico.Test;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.UUID;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import BankCaixaEletronico.Implementations.CaixaEletronico;
-import BankCaixaEletronico.Implementations.ContaCorrente;
+import BankCaixaEletronico.Mocks.MockHardware;
 import BankCaixaEletronico.Mocks.MockServicoRemoto;
 
 public class CaixaEletronicoTest {
     private CaixaEletronico caixaEletronico;
 
     @Before
-    public void SetUp(){
-        this.caixaEletronico = new CaixaEletronico();
+    public void SetUp() {
+        MockServicoRemoto servicoRemoto = new MockServicoRemoto();
+        MockHardware hardware = new MockHardware();
+        this.caixaEletronico = new CaixaEletronico(servicoRemoto, hardware);
+
     }
 
     @Test
@@ -51,8 +52,10 @@ public class CaixaEletronicoTest {
 
         //Arrange
         String stringEsperada = null;
+        String numeroConta = "334556";
+        Double valorDoDeposito = 22.09;
         //Act
-        String stringAtual = caixaEletronico.depositar();
+        String stringAtual = caixaEletronico.depositar(numeroConta, valorDoDeposito);
 
         //Assert
         assertEquals(stringAtual, stringEsperada);
@@ -62,24 +65,12 @@ public class CaixaEletronicoTest {
 
         //Arrange
         String stringEsperada = null;
-        
+        String conta = "1234";
+         
         //Act
-        String stringAtual = caixaEletronico.saldo();
+        String stringAtual = caixaEletronico.saldo(conta);
 
         //Assert
         assertEquals(stringAtual, stringEsperada);
-    }
-
-    @Test
-    public void persistirConta_QUANDO_o_saldo_alterado_ENTAO_retornar_a_conta_com_o_saldo_atualizado() {
-
-        //Arrange
-        ContaCorrente contaEsperada = new ContaCorrente(UUID.randomUUID(),"9876", 2022.1, "987654312");
-        MockServicoRemoto servicoRemoto = new MockServicoRemoto();
-        //Act
-        ContaCorrente contaAtual = servicoRemoto.persistirConta(contaEsperada);
-
-        //Assert
-        assertEquals(contaAtual, contaEsperada);
     }
 }
