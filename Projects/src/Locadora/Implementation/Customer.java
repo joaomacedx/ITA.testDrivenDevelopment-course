@@ -46,7 +46,6 @@ public class Customer {
 	}
 
 	public double getTotalAmount() {
-
 		return this._totalAmount;
 	}
 }
