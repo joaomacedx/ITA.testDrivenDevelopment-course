@@ -1,6 +1,6 @@
 package Locadora.Implementation;
 
-public class Movie {
+public abstract class Movie {
 	
 	public static final int CHILDRENS = 2;
 
@@ -10,22 +10,29 @@ public class Movie {
 
 	private String _title;
 
-	private int _priceCode;
 
-	public Movie(String title, int priceCode) {
+	public static Movie createMovie(String title, int priceCode) {
+		if (priceCode == REGULAR)
+			return new Regular(title);
+		if (priceCode == NEW_RELEASE)
+			return new NewRelease(title);
+		if (priceCode == CHILDRENS)
+			return new Childrens(title);
+		throw new RuntimeException("This movie category not already existe");
+	}
+
+
+	public Movie(String title) {
 		_title = title;
-		_priceCode = priceCode;
-	}
-
-	public int getPriceCode() {
-		return _priceCode;
-	}
-
-	public void setPriceCode(int arg) {
-		_priceCode = arg;
 	}
 
 	public String getTitle() {
 		return _title;
 	};
+
+	public abstract double getAmount(int daysRented);
+
+	public int getFrequentRenterPoints(int daysRented) { 
+		return 1;
+	}
 }

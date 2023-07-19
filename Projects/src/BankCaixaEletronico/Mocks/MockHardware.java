@@ -13,7 +13,7 @@ public class MockHardware implements IHardware {
     }
 
     public void lerEnvelope(Double valorParaDeposito) {
-       Double valor = valorParaDeposito;
+        Double valor = valorParaDeposito;
     }
     
 } 
