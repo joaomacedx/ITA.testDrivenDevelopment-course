@@ -7,7 +7,7 @@ import GamificationComponent.Interfaces.IArmazenamento;
 
 public class Armazenamento implements IArmazenamento{
 
-    private Dictionary<UUID,User> userRepository;
+    public Dictionary<UUID,User> userRepository;
 
     public Armazenamento(Dictionary<UUID,User> userRepository) {
         this.userRepository = userRepository;
@@ -15,8 +15,7 @@ public class Armazenamento implements IArmazenamento{
 
     @Override
     public void salvarPontuacaoDoUsuario(User usuarioParaSalvarPontos) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'salvarPontuacaoDoUsuario'");
+        this.userRepository.put(usuarioParaSalvarPontos.id, usuarioParaSalvarPontos);
     }
 
     @Override
