@@ -22,8 +22,8 @@ This project was developed with the following technologies:
   <img alt="Made by João Macêdo" src="https://img.shields.io/badge/made%20by-João%20Macêdo-yellow">
  </div>
 
- # Certificate of completion and course approval
 <div align="center">
+   <h2> Certificate of completion and course approval</h2>
    <a href="https://www.coursera.org/account/accomplishments/verify/DCW6HVETYK5L">Test Driven Development - Aeronautics Institute of Technology</a>
  </div>
  
