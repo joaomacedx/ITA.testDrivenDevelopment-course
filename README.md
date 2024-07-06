@@ -15,12 +15,6 @@ This project was developed with the following technologies:
 - Java 
 - JUnit
 
-
-<div align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/joaomacedx/TDD-ITA-Course?style=flat" >
-  <img alt="Made by João Macêdo" src="https://img.shields.io/badge/made%20by-João%20Macêdo-yellow">
- </div>
-
 <div align="center">
    <h2> Certificate of completion and course approval</h2>
    <a href="https://www.coursera.org/account/accomplishments/verify/DCW6HVETYK5L">Test Driven Development - Aeronautics Institute of Technology</a>
